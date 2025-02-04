@@ -1,0 +1,19 @@
+version: '3.9'
+networks:
+  botnet:
+
+services:
+  pb-server:
+    image: /devops/pachca-bot/pb-server:dev
+    restart: always
+    ports:
+     - 8080:8080
+    environment:
+      JIRA_API_URL: ""
+      JIRA_LOGIN: ""
+      JIRA_TOKEN: ""
+      PACHCA_API_URL: ""
+      PACHCA_USER_ID: ""
+      PACHCA_TOKEN: ""
+    networks:
+      botnet:
